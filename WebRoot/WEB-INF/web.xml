@@ -6,12 +6,12 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
 <!-- ... -->
 <servlet>
 <servlet-name>FirstServlet</servlet-name>
-<servlet-class>com.pulook.servlet</servlet-class>
+<servlet-class>com.pulook.servlet.FirstServlet</servlet-class>
 </servlet>
 <!-- ... -->
 <servlet-mapping>
 <servlet-name> FirstServlet </servlet-name>
-<url-pattern>/firstServlet/*</url-pattern>
+<url-pattern>/first/*</url-pattern>
 </servlet-mapping>
 <!-- ... -->
 </web-app>
