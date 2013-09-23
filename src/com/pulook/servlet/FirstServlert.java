@@ -33,5 +33,8 @@ public class FirstServlert extends HttpServlet {
 	    out.println("</html>");
 	    out.flush();
 	}
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException{
+		this.doGet(request, response);
+	}
 
 }
