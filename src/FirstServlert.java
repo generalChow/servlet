@@ -1,4 +1,4 @@
-package com.pulook.servlet;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +16,7 @@ public class FirstServlert extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 2240548777631755151L;
-	@Override
+	
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		String myName = request.getParameter("myName");
 		PrintWriter out = response.getWriter();
