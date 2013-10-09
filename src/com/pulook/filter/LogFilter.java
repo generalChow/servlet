@@ -47,14 +47,17 @@ public class LogFilter implements Filter {
 		ServletContext context = this.config.getServletContext();
 		long before = System.currentTimeMillis();
 		System.out.println("开始过滤。。。。。。");
-
+		//设置request字符编码
+        request.setCharacterEncoding("utf-8");
+     //设置response字符编码
+        response.setContentType("text/html;charset=utf-8");
 		// 将请求转换成HttpServletRequest 请求
 		HttpServletRequest hrequest = (HttpServletRequest) request;
 		// 记录日志
 		System.out.println(("Filter已经截获到用户的请求的地址: " + hrequest.getServletPath()));
 
 		chain.doFilter(request, response);
-
+        
 		long after = System.currentTimeMillis();
 
 		System.out.println(("过滤结束"));

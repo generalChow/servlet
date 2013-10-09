@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package com.pulook.servlet;
 
 import java.io.IOException;
@@ -10,23 +13,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pulook.jdbc.Jdbc;
 
-
-
-
-public class FirstServlert extends HttpServlet {
+/**
+ * @author 周大帅	
+ * @email 463734522@qq.com
+ * 2013年10月9日
+ */
+public class DeleteServlet extends HttpServlet {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2240548777631755151L;
+	private static final long serialVersionUID = 1L;
 	@Override
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
-		String myName = request.getParameter("myName");
+		String id = request.getParameter("id");
+		System.out.println("id:"+id);
 		PrintWriter out = response.getWriter();
-		System.out.println("开始执行add操作");
 		try {
 			Jdbc jdbc = new Jdbc();
-			jdbc.saveTest();
+			jdbc.deleteTest(id);;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,11 +47,12 @@ public class FirstServlert extends HttpServlet {
 		out.println("<head><title>this is a simple servlet example</title></head>");
 		out.println("<body>");
 	    out.println("<h1>here is a simple servlet program</h1>");
-	    out.println("<p>"+myName+",welcome!</p>");
+	    out.println("<p>"+"some was deleted"+",welcome!</p>");
 	    out.println("</body>");
 	    out.println("</html>");
 	    out.flush();
 	}
+	
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		this.doGet(request, response);
 	}
