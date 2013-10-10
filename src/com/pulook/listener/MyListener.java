@@ -8,7 +8,8 @@ import javax.servlet.http.HttpSessionListener;
 
 import com.pulook.model.OnlineUser;
 
-/**
+/**实现了HttpSessionListener的会监听，如果new一个session的时候就使用sessionCreated()
+ * 除去一个session的时候 则使用sessionDestroyed方法
  * @author 周大帅	
  * @email 463734522@qq.com
  * 2013年10月9日
